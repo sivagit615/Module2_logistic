@@ -1,7 +1,4 @@
-"""
-Utility Functions for Plotting Data
-"""
-
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -46,5 +43,32 @@ def plot_data(
         linewidth=3
     )
 
-    # Show legend
     ax.legend(loc=loc)
+
+
+# -------------------------------
+# Testing the function
+# -------------------------------
+
+if __name__ == "__main__":
+
+    X = np.array([
+        [1, 2],
+        [2, 3],
+        [3, 1],
+        [4, 5],
+        [5, 2],
+        [6, 4]
+    ])
+
+    y = np.array([0, 1, 0, 1, 0, 1])
+
+    fig, ax = plt.subplots()
+
+    plot_data(X, y, ax)
+
+    ax.set_xlabel("Feature 1")
+    ax.set_ylabel("Feature 2")
+    ax.set_title("Logistic Regression Data")
+
+    plt.show()
